@@ -133,6 +133,11 @@ def cpu():
 def jokes():
     speak(pyjokes.get_joke())
 
+def playSongs():
+    song_dir = 'D:\\Music'
+    songs = os.listdir(song_dir)
+    os.startfile(os.path.join(song_dir, songs[0]))
+
 def quit():
     speak("Bella Ciao Ron!")
     sys.exit()
@@ -165,6 +170,9 @@ if __name__ == "__main__":
 
         elif 'joke' in query:
             jokes()
+
+        elif 'songs' in query:
+            playSongs()
 
         elif 'logout' in query:
             os.system('shutdown -l')
