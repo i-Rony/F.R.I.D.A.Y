@@ -161,7 +161,14 @@ if __name__ == "__main__":
 
         elif "chrome" in query:
             chrome()
-
+            
+        elif "where is" in query:
+            data = query.split(" ")
+            location = data[2]
+            speak("Hold on, I will show you where " + location + " is.")
+            os.system('cmd /k "start chrome https://www.google.nl/maps/place/"'+ location)
+            # os.system("start chrome https://www.google.nl/maps/place/" + location)
+            
         elif 'make note' in query or 'remember' in query or 'know' in query:
             remember()
 
